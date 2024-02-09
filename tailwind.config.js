@@ -2,13 +2,17 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
-        // 👇 Add CSS variables
-        sans: ["var(--font-opensans)"],
-        mono: ["var(--font-roboto-mono)"],
+        body: ["var(--font-nunito-sans)"],
+        display: ["var(--font-nunito)"],
       },
     },
   },
