@@ -19,7 +19,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <PrismicRichText
         field={slice.primary.heading}
         components={{
-          heading1: ({ children }) => <h1 className="text-7xl">{children}</h1>,
+          heading1: ({ children }) => (
+            <h1 className="text-7xl font-bold leading-tight tracking-tight font-display text-slate-700">
+              {children}
+            </h1>
+          ),
         }}
       />
       <PrismicRichText field={slice.primary.body} />
