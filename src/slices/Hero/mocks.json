@@ -9,8 +9,10 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Sides"
-						}
+							"text": "Productivity that flows \nwith your life.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -20,15 +22,17 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Dolore incididunt ut labore amet reprehenderit culpa quis sit irure occaecat consectetur. Consequat dolore enim nostrud irure ad enim pariatur et adipisicing irure deserunt velit. Excepteur incididunt in officia duis sunt."
-						}
+							"text": "Unleash your potential by harmonizing your daily tasks and habits with your unique energy rhythms.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
-				"value": "where",
-				"type": "Text"
+				"type": "Text",
+				"value": "Try for free"
 			},
 			"button_link": {
 				"__TYPE__": "LinkContent",
@@ -38,7 +42,6 @@
 				}
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
@@ -56,6 +59,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
