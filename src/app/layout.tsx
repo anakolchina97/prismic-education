@@ -1,6 +1,9 @@
 import "./globals.css";
-import { Nunito, Nunito_Sans } from "next/font/google";
+import type { Metadata } from "next";
 import clsx from "clsx";
+import { Nunito, Nunito_Sans } from "next/font/google";
+import { createClient, repositoryName } from "@/prismicio";
+import { PrismicPreview } from "@prismicio/next";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,6 +20,21 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
 });
 
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+
+  const settings = await client.getSingle("settings");
+
+  return {
+    title: settings.data.site_title || "Flowrise",
+    description:
+      settings.data.meta_description || "Flowrise is the relaxing app for you.",
+    openGraph: {
+      images: [settings.data.og_image.url || ""],
+    },
+  };
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -24,18 +42,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={clsx(nunito.variable, nunitoSans.variable)}>
-      <head>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="any"
-          href="https://prismic.io/favicon.ico"
-        />
-      </head>
       <body>
         <Header />
         {children}
         <Footer />
+        <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1] inset-0 opacity-50" />
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );
